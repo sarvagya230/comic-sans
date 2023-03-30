@@ -31,12 +31,19 @@ AFRAME.registerComponent("tour",{
 ]
 for(let i in books){
  let id=books[i]["id"]
- document.querySelector(`#${id}`).addEventListener("onmouseenter",() =>{
+ document.querySelector(`#${id}`).addEventListener("mouseenter",() =>{
+  document.querySelector(`#${id}`).setAttribute("material", {
+    color: "#fff",
+    opacity: 1,
+  });
+ })
+ document.querySelector(`#${id}`).addEventListener("mouseleave", (event) => {
   document.querySelector(`#${id}`).setAttribute("material", {
     color: "#0077CC",
     opacity: 1,
   });
- })
+
+ });
 }
 
       
