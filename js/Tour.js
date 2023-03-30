@@ -2,7 +2,47 @@ AFRAME.registerComponent("tour",{
     init:function(){
        this.placesContainer=this.el
        this.createCards()
+       this.handleEnter()
     },
+    handleEnter:function() {
+      let books=[
+        {
+          id: "vichitra-vade",
+          title: "VICHITRA VADE",
+          url: "../p_doctorstrange_19918_516f94d3.jpeg",
+        },
+        {
+          id: "makdra-man",
+          title: "MAKDRA MANAV",
+          url: "../download.jpg",
+        },
+  
+        {
+          id: "semlon-bhai",
+          title: "SEMLON BHAI",
+          url: "../Salman_Khan_at_Renault_Star_Guild_Awards.jpg",
+        },
+        {
+          id: "gativan-blak",
+          title: "GATIVAN BLAK",
+          url: "../flash.jpg",
+        },
+      
+]
+for(let i in books){
+ let id=books[i]["id"]
+ document.querySelector(`#${id}`).addEventListener("onmouseenter",() =>{
+  document.querySelector(`#${id}`).setAttribute("material", {
+    color: "#0077CC",
+    opacity: 1,
+  });
+ })
+}
+
+      
+    }
+    ,
+
     createCards:function(){
         let prevpos=-60
         let books=[
